@@ -1,0 +1,32 @@
+version: "3.1"
+services:
+    mysql:
+      image: mysql:5.7
+      container_name: australia-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=australia
+      ports:
+        - "17002:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: australia-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "17000:80"
+
+    php-fpm:
+      build: docker/php-fpm
+      container_name: australia-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./docker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
+
