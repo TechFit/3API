@@ -25,7 +25,7 @@ class CustomerManager
     /**
      * Insert or update customers, checked by unique email
      *
-     * @param \App\DTO\CustomerDTO[] $customers
+     * @param \App\DTO\CustomerDTOInterface[] $customers
      */
     public function store(array $customers): void
     {

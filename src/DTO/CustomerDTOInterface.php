@@ -4,9 +4,9 @@
 namespace App\DTO;
 
 /**
- * Interface CustomerDTO
+ * Interface CustomerDTOInterface
  */
-interface CustomerDTO
+interface CustomerDTOInterface
 {
     /**
      * @return string

@@ -7,7 +7,7 @@ namespace App\DTO;
 /**
  * Class RandomuserCustomerDTO
  */
-class RandomuserCustomerDTO implements CustomerDTO
+class RandomuserCustomerDTO implements CustomerDTOInterface
 {
     /**
      * @var array
